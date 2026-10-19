@@ -138,3 +138,6 @@ The user approved this displayed technical plan on 18 October 2026. During build
 
 ## Opportunity Import Refinement
 Implements prd.md > Approved Opportunity Import Refinement. src/import/link-reader.js performs opt-in direct CORS fetch with credentials omitted, no-referrer, a 10-second abort and 1 MiB page bound. Parse inert HTML/JobPosting JSON-LD locally. Never use scraped instructions as code, invent salary units or infer applicant experience from required experience. Explicit monthly pay only; ambiguous pay stays blank. Failed retrieval preserves current inputs and explains paste/document fallback. No online proxy or extraction backend. src/import/field-suggestions.js maps clear labels/sections into empty job form fields. Highlight routing confirms existing scalar replacements; textual requirements/description append.
+
+## Competition Import Decision
+Learner confirmed browser-only import for the competition. Keep document and paste fallbacks. Server retrieval, browser rendering and browser extension options are future development only. Prefer a specific selected advert; reject ambiguous pages rather than importing unrelated results or ads.

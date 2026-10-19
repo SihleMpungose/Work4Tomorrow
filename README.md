@@ -1,7 +1,7 @@
 # Work4Tomorrow
 Compare opportunities. Plan your next move.
 
-A new competition project for early-career job seekers across South Africa. Currently implements **slices 1–3**: a reusable local profile, manually entered jobs, reviewed skills evidence, and a single-job cost evaluation. Local TXT/DOCX/text-PDF import now includes a review-and-apply step. Multi-job priorities, current-job context and salary guidance are available. Snapshot/History implementation remains pending.
+A new competition project for early-career job seekers across South Africa. Currently implements **slices 1–4 for review**: a reusable local profile, manually entered jobs, reviewed skills evidence, and a single-job cost evaluation. Local TXT/DOCX/text-PDF import now includes a review-and-apply step. Multi-job priorities, current-job context and salary guidance are available. Saved snapshots, source-change flags, independent statuses and History are available. Final hands-on review remains pending.
 
 ## Run
 Requires Python 3 for local serving only; modern browser with IndexedDB. No paid services or API keys.
@@ -22,10 +22,10 @@ The Python tool provides an independent calculation example for learning. App ca
 Create a profile with a genuine example duty and salary goals. Add a job, a fixed salary or labelled assumption, deductions and travel costs. Explicitly enter zero for parking/tolls/other costs if none. Save, review each requirement and supporting evidence, then inspect money remaining. Reload to check persistence. Blank deductions or costs remain unknown.
 
 ## Privacy and current limits
-Data stays in IndexedDB on the same device/browser; no server receives it. Clearing site data removes it. Use synthetic data when demonstrating. Job collection deletion, statuses, snapshots and History arrive in the final slice. The first slice uses regular weekly commuting schedules and a combined fare or petrol; it does not yet handle mixed separate legs. No guaranteed hiring outcomes, tax estimate or market salary estimate. Personal learner profile is excluded from Git. Development repository: https://github.com/SihleMpungose/Work4Tomorrow . An open-source licence must be chosen before competition submission.
+Data stays in IndexedDB on the same device/browser; no server receives it. Clearing site data removes it. Use synthetic data when demonstrating. Job collection deletion, statuses, snapshots and History are implemented. The first slice uses regular weekly commuting schedules and a combined fare or petrol; it does not yet handle mixed separate legs. No guaranteed hiring outcomes, tax estimate or market salary estimate. Personal learner profile is excluded from Git. Development repository: https://github.com/SihleMpungose/Work4Tomorrow . An open-source licence must be chosen before competition submission.
 
 ## Planning
-`devpost/scope.md`, `prd.md`, `spec.md` are approved; `checklist.md` records implementation and learner review progress. Public repository is intended for SihleMpungose.
+`devpost/scope.md`, `prd.md`, `spec.md` are approved; `checklist.md` records implementation and learner review progress. Public repository is intended for SihleMpungose, not AfrikaBrothers.
 
 ## Document import
 Choose a local TXT, DOCX or text-based PDF (5 MiB, 50 PDF pages, 100,000 characters; 15-second cancelable worker). Review extracted text, highlight genuine skill/task text or job requirements, then apply to the form. Clearly labelled job title/company/location can be proposed; salary is never invented. Apply does not save. Original files are not stored; structured details and explicitly selected excerpts are saved only with Save. Source links are optional references and are not fetched. Scans/images, encrypted files and malformed archives offer paste/manual fallback.
@@ -41,3 +41,6 @@ Profile import now suggests empty name, skills, experience, certifications and e
 The Save profile action runs without native form navigation, including previews that disallow form submissions. A confirmed database transaction is followed by direct dashboard rendering. Sandboxed preview regression: `node tests/browser-preview-save.cjs`.
 
 Add an Opportunity imports now suggest empty title/employer/location/description/requirements fields and explicit monthly salary ranges, weekly hours and required experience. Highlighted text opens a job-field chooser; existing scalar values require replacement confirmation. Applicant experience, payroll deductions and travel costs are never inferred from the advert. Direct link import is opt-in and uses browser CORS fetch without profile data, cookies or a proxy. Pages with JobPosting JSON-LD can expose structured fields; login/blocked/script-rendered pages may require pasted text or a document. A successful import is not a saved job.
+
+## Saved comparisons and History
+Save results from Compare jobs, then reopen from Overview. Profile/job edits flag old results without rewriting figures; Compare again uses current records. Deleting a job archives its related snapshots into History only. Open/Closed availability is separate from application progress, even after a closing date. Current-job removal archives snapshots that used that baseline. Deletion requires in-page confirmation and is atomic with archive updates. Browser tests: `node tests/browser-history.cjs`; unit tests: `node tests/snapshots.test.mjs`. Browser-only import remains the competition strategy. Future online importer/rendering/extension work is not implemented.

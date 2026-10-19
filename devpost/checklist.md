@@ -38,7 +38,7 @@ Build mode: fast with focused learning pauses, agreed by the learner to balance 
   Learner check: Compare retail and call centre, change priorities and inspect the reason for any change. Add a current job, attempt a fourth prospective selection, and check that missing information and mandatory gaps remain clear.
   Commit: `Add explained multi-job priorities baseline and salary guidance`
 
-- [ ] **4. Manage applications and preserve saved comparisons in History**
+- [x] **4. Manage applications and preserve saved comparisons in History**
   Becomes usable: A searchable job collection, independent availability/application statuses and immutable saved comparisons remain useful after edits and deletions.
   Why now: Completes returning-user continuity after the actual comparison outputs are established.
   PRD ref: `prd.md > Screens and Layout`, `prd.md > Manage Job Status`, `prd.md > Saving, Changed Details and History`
@@ -91,3 +91,6 @@ Activity mode: Planned live app and editor; adjust only if the learner's environ
 - Reproduced silent save in a sandboxed HTML preview with native forms disabled. Profile save now uses an explicit button action, commits storage before directly rendering Dashboard, and survives iframe reload. Native-submit controls elsewhere use explicit app dispatch as well. Sandboxed-preview regression passes.
 
 - Learner-directed opportunity import refinement implemented: opt-in direct link access with blocked-site fallback, document/paste field suggestions and highlighted-text job-field chooser. Source and standalone-preview browser tests pass for matching fields, JSON-LD salary, preserved values and inert remote content.
+
+- Browser-only import retained for competition; online retrieval/rendering/extension paths are future work. Selected Indeed search links normalise to a specific job URL; page parsing now requires structured JobPosting data or an identifiable job-description region instead of scraping page-wide content. CORS restrictions remain visible fallbacks.
+- Slice 4 verified in Chromium: independent availability/application states, closing dates, searchable collection, saved immutable input/results/salary guidance, revision flags, confirmed/cancelled/failed deletion, historical-only routing and reload. In-page confirmations work without native pop-up permission. Final hands-on review and learning wrap-up are still pending; no ship approval claimed.
