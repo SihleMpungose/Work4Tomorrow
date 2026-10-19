@@ -1,0 +1,20 @@
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {evaluateCosts,petrolCost,numberOrNull} from '../src/domain/costs.js';
+import {suggestEvidence,readiness} from '../src/domain/skills.js';
+const cases=JSON.parse(await readFile(new URL('../fixtures/cost-cases.json',import.meta.url)));
+for(const c of cases){const actual=evaluateCosts(c.job);for(const [k,v] of Object.entries(c.expected)){if(v===null)assert.equal(actual[k],null);else assert.ok(Math.abs(actual[k]-v)<1e-8,c.name+':'+k);}console.log('PASS',c.name);}
+assert.equal(numberOrNull(''),null);assert.equal(numberOrNull('0'),0);
+assert.equal(petrolCost(null,7,22),null);assert.throws(()=>petrolCost(-4,7,22));
+assert.equal(evaluateCosts({transport:'none',parking:0,tolls:0,days:5,fixed:null,salary:8000,deductions:0}).monthly,null);
+assert.equal(readiness([{mandatory:true,status:'Confirmed unmet'}]),'Conditional: mandatory requirement gap');
+assert.deepEqual(suggestEvidence('cash handling',{evidence:'I was a till operator\nI cleaned shelves'}),['I was a till operator']);
+console.log('PASS missing data, invalid input and evidence checks');
+assert.deepEqual(suggestEvidence('Customer-service experience required',{evidence:'I have customer service experience'}),['I have customer service experience']);
+assert.deepEqual(suggestEvidence('Troubleshooting',{evidence:'I have knowledge fixing PCs and phones'}),['I have knowledge fixing PCs and phones']);
+assert.deepEqual(suggestEvidence('Technical support and troubleshooting',{evidence:'Repairing laptops and mobile phones'}),['Repairing laptops and mobile phones']);
+assert.deepEqual(suggestEvidence('Customer service',{evidence:'I have no customer service experience'}),[]);
+assert.deepEqual(suggestEvidence('cash handling',{evidence:'I keep a positive attitude'}),[]);
+assert.deepEqual(suggestEvidence('Troubleshooting',{evidence:'I enjoy selling phones'}),[]);
+assert.deepEqual(suggestEvidence('Troubleshooting',{evidence:'I enjoy fixing recipes'}),[]);
+console.log('PASS direct, related troubleshooting, negation and unrelated-evidence regressions');

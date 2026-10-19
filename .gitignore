@@ -1,0 +1,13 @@
+/devpost/learner-profile.md
+.env
+.env.*
+!.env.example
+/upload/
+
+*.pem
+*.key
+__pycache__/
+node_modules/
+/output/
+/.codex/
+/upload/
