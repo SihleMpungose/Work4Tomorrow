@@ -1,0 +1,6 @@
+import assert from 'node:assert/strict';import {weightsFor,compareJobs,hoursScore} from '../src/domain/priorities.js';import {salaryGuide} from '../src/domain/salary.js';
+const w=weightsFor('rank',{skills:1,money:2,commute:3,hours:4});assert.equal(w.skills,.4);assert.throws(()=>weightsFor('rank',{skills:1,money:1,commute:3,hours:4}));assert.throws(()=>weightsFor('adjust',{skills:0,money:0,commute:0,hours:0}));
+const base={transport:'none',parking:0,tolls:0,days:5,fixed:0,salary:6000,deductions:0,commute:30,hours:40,requirements:[{status:'Supported',mandatory:false}],requiredMonths:12,relevantMonths:12};
+let r=compareJobs([{...base,id:'a'},{...base,id:'b'}],{preferredHours:40},w);assert.equal(r.leaders.length,2);r=compareJobs([{...base,id:'a'},{...base,id:'b',deductions:null}],{preferredHours:40},w);assert.ok(r.missing.includes('money'));assert.equal(r.leaders.length,0);assert.equal(hoursScore(50,{preferredHours:40,maxHours:45}),0);
+for(const [months,target]of [[8,6500],[12,7500],[18,8500]])assert.equal(salaryGuide({...base,salaryMax:9000,relevantMonths:months}).target,target);
+assert.equal(salaryGuide({...base,salaryMax:9000,requirements:[{mandatory:false,status:'Needs clarification'}]}).target,undefined);assert.equal(salaryGuide({...base,salary:8000}).target,8000);console.log('PASS weights, ties, incomplete factors, hours and salary bands');

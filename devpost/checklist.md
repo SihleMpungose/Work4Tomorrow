@@ -8,7 +8,7 @@ Build mode: fast with focused learning pauses, agreed by the learner to balance 
 
 ## Slices
 
-- [ ] **1. Evaluate a manually entered job against your profile and costs**
+- [x] **1. Evaluate a manually entered job against your profile and costs**
   Becomes usable: A mobile-friendly blue app where a saved profile and one manually entered job produce evidence checks, daily/weekly/monthly costs and an explained single-job evaluation, surviving a reload.
   Why now: Proves the unique skills-plus-real-cost kernel immediately, including the real persistence path; avoids building a generic dashboard before useful results exist.
   PRD ref: `prd.md > The Core Journey`, `prd.md > Skills Evidence and Gaps`, `prd.md > Transport Costs and Time Periods`, `prd.md > Incomplete Comparisons`
@@ -18,7 +18,7 @@ Build mode: fast with focused learning pauses, agreed by the learner to balance 
   Learner check: Open the running app, enter a profile and retail job, inspect skills and costs, reload to confirm saving, and report anything confusing or visually wrong.
   Commit: `Build persistent single-job skills and cost evaluation`
 
-- [ ] **2. Import local job or CV text and correct it before saving**
+- [x] **2. Import local job or CV text and correct it before saving**
   Becomes usable: TXT, DOCX and text-based PDF can fill a review screen; the user confirms extracted job/profile details before saving and evaluating them.
   Why now: Tests the main dependency and device-performance risk early, while manual entry already offers a working fallback.
   PRD ref: `prd.md > Platform, Privacy and Core Input Boundary`, `prd.md > States and Observable Acceptance Criteria`
@@ -28,7 +28,7 @@ Build mode: fast with focused learning pauses, agreed by the learner to balance 
   Learner check: Try a non-sensitive sample document, correct a suggested field and save it. Try an unsupported file and confirm you can continue manually.
   Commit: `Add reviewed local document extraction`
 
-- [ ] **3. Compare up to three opportunities with current-job context and salary guidance**
+- [x] **3. Compare up to three opportunities with current-job context and salary guidance**
   Becomes usable: Select one to three jobs, optionally compare staying in the current job, choose priorities and inspect financial/time trade-offs, conditional readiness and salary bands.
   Why now: Builds the full decision workflow on verified evidence, costs and inputs rather than hiding uncertain data behind a ranking.
   PRD ref: `prd.md > Priorities and Explained Recommendations`, `prd.md > Comparison Factors and Working Hours`, `prd.md > Current Job Baseline`, `prd.md > Salary Suggestion Outputs`
@@ -50,7 +50,7 @@ Build mode: fast with focused learning pauses, agreed by the learner to balance 
 
 ## Hands-on Checkpoints
 
-- [ ] Early usable behavior explored — after slice 1; adjust presentation and clarity before remaining screens grow.
+- [x] Early usable behavior explored — after slice 1; adjust presentation and clarity before remaining screens grow.
 - [ ] Integrated comparison explored — after slice 3; inspect the core recommendation and salary logic with learner-entered values.
 - [ ] Final kick-the-tires exploration and feedback completed — after slice 4 and integrated verification.
 
@@ -79,3 +79,9 @@ Activity mode: Planned live app and editor; adjust only if the learner's environ
 - Slice 1 implementation exists and domain/Python checks pass, but browser verification is blocked: no Chromium binary is installed; full and headless downloads return invalid archives, and system dependency installation is unavailable. The slice remains unchecked and uncommitted pending real browser verification and early hands-on feedback. No application features were cut.
 
 - Early learner feedback: replaced horizontal mobile tabs with an accessible expandable menu and improved direct/related skills suggestions, including PC/phone repair → troubleshooting. Regression checks pass; browser runtime verification remains pending.
+
+- Browser verification recovered using a Chromium binary from the npm distribution and bundled software rendering. Real-browser checks pass for profile-first onboarding, mobile menu, direct/related matches, costs, persistence and injected failed-save retry. User-approved early feedback is implemented. The previous browser blocker is resolved.
+
+- Local document import verified in Chromium for TXT/DOCX/text-based PDF and self-contained preview. Review/apply updates form fields without saving; scan/malformed/oversized/unsupported fallbacks and local-only requests pass. Fixed internal worker-message routing discovered during PDF integration. Add-new-job navigation now opens a fresh editor rather than editing the latest saved job.
+
+- Three-job comparison verified in Chromium: fourth selection preserves the first three, current job stays outside selection, priority changes affect leadership, salary bands are explained and missing financial data suppresses overall winners. Integrated learner checkpoint is pending; slice 4 has not started.

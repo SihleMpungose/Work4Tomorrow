@@ -1,7 +1,7 @@
 # Work4Tomorrow
 Compare opportunities. Plan your next move.
 
-A new competition project for early-career job seekers across South Africa. Currently implements **slice 1**: a reusable local profile, manually entered jobs, reviewed skills evidence, and a single-job cost evaluation. Later checklist slices are not implemented yet.
+A new competition project for early-career job seekers across South Africa. Currently implements **slices 1–3**: a reusable local profile, manually entered jobs, reviewed skills evidence, and a single-job cost evaluation. Local TXT/DOCX/text-PDF import now includes a review-and-apply step. Multi-job priorities, current-job context and salary guidance are available. Snapshot/History implementation remains pending.
 
 ## Run
 Requires Python 3 for local serving only; modern browser with IndexedDB. No paid services or API keys.
@@ -22,7 +22,16 @@ The Python tool provides an independent calculation example for learning. App ca
 Create a profile with a genuine example duty and salary goals. Add a job, a fixed salary or labelled assumption, deductions and travel costs. Explicitly enter zero for parking/tolls/other costs if none. Save, review each requirement and supporting evidence, then inspect money remaining. Reload to check persistence. Blank deductions or costs remain unknown.
 
 ## Privacy and current limits
-Data stays in IndexedDB on the same device/browser; no server receives it. Clearing site data removes it. Use synthetic data when demonstrating. Job collection deletion, statuses, import, multi-job ranking, current-job baseline, snapshots and History arrive in later slices. The first slice uses regular weekly commuting schedules and a combined fare or petrol; it does not yet handle mixed separate legs. No guaranteed hiring outcomes, tax estimate or market salary estimate. Personal learner profile is excluded from Git. Development repository: https://github.com/SihleMpungose/Work4Tomorrow . An open-source licence must be chosen before competition submission.
+Data stays in IndexedDB on the same device/browser; no server receives it. Clearing site data removes it. Use synthetic data when demonstrating. Job collection deletion, statuses, snapshots and History arrive in the final slice. The first slice uses regular weekly commuting schedules and a combined fare or petrol; it does not yet handle mixed separate legs. No guaranteed hiring outcomes, tax estimate or market salary estimate. Personal learner profile is excluded from Git. Development repository: https://github.com/SihleMpungose/Work4Tomorrow . An open-source licence must be chosen before competition submission.
 
 ## Planning
 `devpost/scope.md`, `prd.md`, `spec.md` are approved; `checklist.md` records implementation and learner review progress. Public repository is intended for SihleMpungose, not AfrikaBrothers.
+
+## Document import
+Choose a local TXT, DOCX or text-based PDF (5 MiB, 50 PDF pages, 100,000 characters; 15-second cancelable worker). Review extracted text, highlight genuine skill/task text or job requirements, then apply to the form. Clearly labelled job title/company/location can be proposed; salary is never invented. Apply does not save. Original files are not stored; structured details and explicitly selected excerpts are saved only with Save. Source links are optional references and are not fetched. Scans/images, encrypted files and malformed archives offer paste/manual fallback.
+
+Parser versions and licences are in THIRD_PARTY_NOTICES.md. Browser import/regression scripts use Playwright as a developer-only tool. With a local server running and Playwright available, run `node tests/browser-first-slice.cjs` and `node tests/browser-imports.cjs`. Set CHROMIUM_PATH if using a separate Chromium binary. No browser testing dependency is needed to run the app.
+
+Build a self-contained preview/source ZIP with `python3 tools/package_preview.py`. Preview resources are embedded; this avoids runtime CDN downloads.
+
+Comparison checks: `node tests/comparison.test.mjs` and, with the server and Playwright, `node tests/browser-comparison.cjs`. Rankings are transparent relative heuristics, not hiring probabilities or market salary estimates. Salary-range financial results explicitly use the minimum; changing deductions is a user assumption. Current-job costs use an entered monthly total and do not consume an opportunity slot.
