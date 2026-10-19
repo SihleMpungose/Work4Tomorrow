@@ -87,3 +87,5 @@ Activity mode: Planned live app and editor; adjust only if the learner's environ
 - Three-job comparison verified in Chromium: fourth selection preserves the first three, current job stays outside selection, priority changes affect leadership, salary bands are explained and missing financial data suppresses overall winners. Integrated learner checkpoint is pending; slice 4 has not started.
 
 - Learner-reported profile save/import feedback: visible local validation and save/retry feedback; CV section/name suggestions into empty fields; separate skills/experience/training/education fields; highlighted-text destination chooser preserving existing content. Chromium save, failure/retry, import mapping and reload regression pass.
+
+- Reproduced silent save in a sandboxed HTML preview with native forms disabled. Profile save now uses an explicit button action, commits storage before directly rendering Dashboard, and survives iframe reload. Native-submit controls elsewhere use explicit app dispatch as well. Sandboxed-preview regression passes.
