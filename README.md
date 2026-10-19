@@ -44,3 +44,6 @@ Add an Opportunity imports now suggest empty title/employer/location/description
 
 ## Saved comparisons and History
 Save results from Compare jobs, then reopen from Overview. Profile/job edits flag old results without rewriting figures; Compare again uses current records. Deleting a job archives its related snapshots into History only. Open/Closed availability is separate from application progress, even after a closing date. Current-job removal archives snapshots that used that baseline. Deletion requires in-page confirmation and is atomic with archive updates. Browser tests: `node tests/browser-history.cjs`; unit tests: `node tests/snapshots.test.mjs`. Browser-only import remains the competition strategy. Future online importer/rendering/extension work is not implemented.
+
+### Sample jobs
+After saving your profile, choose **Load sample jobs** on Overview to add three fictional retail, customer service and IT support roles. All salaries, deductions, schedules and travel costs are illustrative assumptions, not market data or live vacancies. Requirement assessments start at **Needs clarification**. Repeated loading preserves existing jobs and edits; deleted sample jobs can be loaded again. Samples remain labelled when edited, evaluated or saved in comparisons.

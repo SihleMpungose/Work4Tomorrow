@@ -41,3 +41,12 @@ export async function saveProfileAndArchive(record){
   tx.oncomplete=()=>resolve(record);tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error||new Error('Profile save cancelled.'));
  });
 }
+
+// One transaction; stable IDs make repeated loads preserve all existing edits.
+export async function addMissingJobs(records){
+ const db=await openDB();return new Promise((resolve,reject)=>{
+  const tx=db.transaction('jobs','readwrite'),store=tx.objectStore('jobs');let added=0;
+  for(const record of records){const request=store.get(record.id);request.onsuccess=()=>{if(!request.result){store.add(record);added++;}};}
+  tx.oncomplete=()=>resolve(added);tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error||new Error('Sample load cancelled.'));
+ });
+}
