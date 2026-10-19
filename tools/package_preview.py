@@ -24,7 +24,7 @@ code=code.replace("new URL('./extract-worker.js',import.meta.url)",'IMPORT_WORKE
 code=(bootstrap+code).replace('</script','<\\/script')
 page=(ROOT/'index.html').read_text().replace('<link rel="stylesheet" href="styles/app.css">','<style>'+(ROOT/'styles/app.css').read_text()+'</style>').replace('<script type="module" src="src/app.js"></script>','<script type="module">'+code+'</script>')
 (OUT/'work4tomorrow-preview.html').write_text(page)
-with zipfile.ZipFile(OUT/'work4tomorrow-v0.4.1-sample-jobs.zip','w',zipfile.ZIP_DEFLATED) as z:
+with zipfile.ZipFile(OUT/'work4tomorrow-v0.4.2-evidence-save.zip','w',zipfile.ZIP_DEFLATED) as z:
  for folder in ['src','styles','vendor','fixtures','tools','tests','devpost']:
   for f in (ROOT/folder).rglob('*'):
    if f.is_file() and '__pycache__' not in f.parts and f.name!='learner-profile.md' and (folder!='devpost' or f.suffix=='.md'):z.write(f,'work4tomorrow/'+str(f.relative_to(ROOT)))
