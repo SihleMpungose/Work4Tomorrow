@@ -122,3 +122,6 @@ Manual entry and pasted text are the first dependable path. Local TXT, DOCX and 
 
 ## Review Gate
 This is a planning document, not a working application. User approved this consolidated document on 18 October 2026. Technical planning is the next stage. The required scope.md, prd.md and subsequent spec.md must remain part of the eventual public project. Learner profile is excluded from public commits by default.
+
+## Approved Opportunity Import Refinement
+The learner requested direct job-link import, automatic reviewable job-field suggestions from read documents and a highlighted-text destination chooser on Add an Opportunity. Direct browser import may fail on blocked or login/script-rendered pages; manual/paste/document fallbacks remain. Preserve existing fields unless the user explicitly replaces them.
