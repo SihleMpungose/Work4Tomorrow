@@ -11,7 +11,7 @@ const concepts = [
 ];
 export function matchEvidence(requirement, profile = {}) {
  const text=normalise(requirement);
- const lines=[...String(profile.evidence||'').split(/\n|;/),...String(profile.certificates||'').split(/\n|;/)].map(x=>x.trim()).filter(Boolean);
+ const lines=[...String(profile.evidence||'').split(/\n|;/),...String(profile.experience||'').split(/\n|;/),...String(profile.certificates||'').split(/\n|;/),...String(profile.qualifications||'').split(/\n|;/)].map(x=>x.trim()).filter(Boolean);
  const requiredConcepts=concepts.filter(c=>c.terms.some(t=>has(text,t)));
  const results=[];
  for(const evidence of [...new Set(lines)]){

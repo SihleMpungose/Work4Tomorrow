@@ -35,3 +35,5 @@ Parser versions and licences are in THIRD_PARTY_NOTICES.md. Browser import/regre
 Build a self-contained preview/source ZIP with `python3 tools/package_preview.py`. Preview resources are embedded; this avoids runtime CDN downloads.
 
 Comparison checks: `node tests/comparison.test.mjs` and, with the server and Playwright, `node tests/browser-comparison.cjs`. Rankings are transparent relative heuristics, not hiring probabilities or market salary estimates. Salary-range financial results explicitly use the minimum; changing deductions is a user assumption. Current-job costs use an entered monthly total and do not consume an opportunity slot.
+
+Profile import now suggests empty name, skills, experience, certifications and education fields from clear CV labels/headings. Existing entries are never silently overwritten. Highlighted text opens a destination chooser before applying; review and save remain separate. Unrecognised layouts can be corrected manually. Save validation and storage failures are visible next to the profile save control. Regression checks: `node tests/profile-import.test.mjs` and `node tests/browser-profile.cjs`.

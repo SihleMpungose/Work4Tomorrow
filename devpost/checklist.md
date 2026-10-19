@@ -85,3 +85,5 @@ Activity mode: Planned live app and editor; adjust only if the learner's environ
 - Local document import verified in Chromium for TXT/DOCX/text-based PDF and self-contained preview. Review/apply updates form fields without saving; scan/malformed/oversized/unsupported fallbacks and local-only requests pass. Fixed internal worker-message routing discovered during PDF integration. Add-new-job navigation now opens a fresh editor rather than editing the latest saved job.
 
 - Three-job comparison verified in Chromium: fourth selection preserves the first three, current job stays outside selection, priority changes affect leadership, salary bands are explained and missing financial data suppresses overall winners. Integrated learner checkpoint is pending; slice 4 has not started.
+
+- Learner-reported profile save/import feedback: visible local validation and save/retry feedback; CV section/name suggestions into empty fields; separate skills/experience/training/education fields; highlighted-text destination chooser preserving existing content. Chromium save, failure/retry, import mapping and reload regression pass.
