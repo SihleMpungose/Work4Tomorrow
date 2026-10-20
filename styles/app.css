@@ -5,3 +5,5 @@
 .onboarding .app{display:block}.onboarding .sidebar,.onboarding .topbar{display:none}.onboarding main{max-width:850px;margin:0 auto;padding-top:35px}.onboarding footer{display:none}.onboarding .onboarding-brand{font-size:20px;font-weight:750;color:#225ac3;margin-bottom:28px}.onboarding .heading{margin-top:0}
 
 .confirm-dialog{border:1px solid #cbd8e8;border-radius:16px;max-width:min(460px,90vw);padding:25px;color:#183354;background:white}.confirm-dialog::backdrop{background:rgba(15,35,60,.45)}
+
+.comparison-overview{margin:20px 0}.comparison-scroll{overflow-x:auto;max-width:100%;margin:16px 0}.comparison-scroll table{border-collapse:collapse;min-width:560px;width:100%;text-align:left}.comparison-scroll th,.comparison-scroll td{padding:12px;border-bottom:1px solid #d9e3ef;vertical-align:top}.comparison-scroll thead{background:#edf3fc}.requirement-report{margin-top:24px}.requirement-report summary{cursor:pointer;line-height:1.6}.requirement-report details p{overflow-wrap:anywhere}

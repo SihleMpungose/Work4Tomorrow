@@ -47,3 +47,8 @@ Save results from Compare jobs, then reopen from Overview. Profile/job edits fla
 
 ### Sample jobs
 After saving your profile, choose **Load sample jobs** on Overview to add three fictional retail, customer service and IT support roles. All salaries, deductions, schedules and travel costs are illustrative assumptions, not market data or live vacancies. Requirement assessments start at **Needs clarification**. Repeated loading preserves existing jobs and edits; deleted sample jobs can be loaded again. Samples remain labelled when edited, evaluated or saved in comparisons.
+
+### Skills matching and comparisons (v0.5)
+Matching reads saved profile evidence, experience, training and education. Curated rules recognise duties such as resolving client issues, repairing devices, processing payments and training colleagues. Every suggestion shows its source and explanation. Suggestions never overwrite profile fields or automatically confirm requirements; qualifications, duration and technical depth still require review. This is a local rule-based matcher, not a general language model, so unusual wording may need manual review.
+
+The comparison includes a side-by-side table, requirement-level evidence reports, unresolved mandatory requirements and direct money/time trade-offs. Scores still use reviewed assessments only. Saved comparisons retain their original evidence reports; older snapshots remain readable. Document reading and profile prepopulation are unchanged.

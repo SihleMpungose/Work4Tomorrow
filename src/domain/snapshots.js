@@ -1,5 +1,5 @@
 import {salaryGuide} from './salary.js';
-export const FORMULA_VERSION='w4t-1';
+export const FORMULA_VERSION='w4t-2-evidence';
 export function createSnapshot(jobs,profile,mode,values,weights,result){return {id:crypto.randomUUID(),createdAt:new Date().toISOString(),historical:false,deletedIds:[],payload:structuredClone({formulaVersion:FORMULA_VERSION,jobs,profile,mode,values,weights,result,salaryGuides:Object.fromEntries(jobs.map(job=>[job.id,salaryGuide(job,profile)]))})};}
 export function snapshotChanged(item,profile,jobs){return item.payload.formulaVersion!==FORMULA_VERSION||(item.payload.profile.revision||0)!==(profile.revision||0)||item.payload.jobs.some(old=>!jobs.some(job=>job.id===old.id&&(job.revision||0)===(old.revision||0)));}
 export function closingDateLabel(value,now=new Date()){
