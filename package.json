@@ -1,1 +1,1 @@
-{"name":"work4tomorrow","version":"0.5.2","private":true,"type":"module","scripts":{"test":"node tests/domain.test.mjs"}}
+{"name":"work4tomorrow","version":"0.5.3","private":true,"type":"module","scripts":{"test":"node tests/domain.test.mjs"}}

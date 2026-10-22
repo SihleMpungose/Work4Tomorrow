@@ -1,3 +1,4 @@
+import {extractRequirements} from './requirements.js';
 // Conservative field suggestions. Unknown salary units and applicant experience stay unknown.
 export function importNumber(value){
  const text=String(value).trim().replace(/^(?:R|ZAR)\s*/i,'').replace(/\s+/g,'');
@@ -14,9 +15,8 @@ export function suggestFields(text) {
  if(salaryLine){const amounts=[...salaryLine.matchAll(/(?:R|ZAR)\s*([0-9][0-9 ,]*(?:\.[0-9]{1,2})?)/gi)].map(x=>importNumber(x[1].trim())).filter(x=>x!=null);if(amounts.length){fields.salary=amounts[0];if(amounts.length>1&&amounts[1]>=amounts[0])fields.salaryMax=amounts[1];}}
  const hours=lines.map(x=>x.match(/(?:working hours\s*:\s*)?(\d+(?:\.\d+)?)\s*(?:hours?|hrs?)\s*(?:per\s*week|weekly|\/week)/i)).find(Boolean);if(hours&&Number(hours[1])<=168)fields.hours=Number(hours[1]);
  const experience=lines.map(x=>x.match(/(?:minimum|required|at least)\s*(\d+(?:\.\d+)?)\s*(years?|months?)(?:\s+(?:of\s+)?(?:relevant\s+)?experience)?/i)||x.match(/(\d+(?:\.\d+)?)\s*(years?|months?)\s+(?:of\s+)?(?:relevant\s+)?experience/i)).find(Boolean);if(experience)fields.requiredMonths=Number(experience[1])*(experience[2].toLowerCase().startsWith('year')?12:1);
- let collecting=false;const requirements=[];
- for(const line of lines){if(/^(?:requirements?|minimum requirements?|qualifications?|skills(?: required)?|education|experience required)\s*:?$/i.test(line)){collecting=true;continue;}if(/^(?:responsibilities|duties|benefits|how to apply|application(?: process)?|job description|about(?: us| the role)?)\s*:?$/i.test(line)){collecting=false;continue;}if(collecting)requirements.push(line.replace(/^[•*–-]\s*/,''));}
- if(requirements.length)fields.requirements=requirements.slice(0,50).join('\n');
+ const requirements=extractRequirements(text);
+ if(requirements.length)fields.requirements=requirements.map(r=>r.text).join('\n');
  if(lines.length)fields.description=String(text).trim().slice(0,12000);
  return fields;
 }

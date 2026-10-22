@@ -11,3 +11,6 @@
 [hidden]{display:none!important}
 
 .import-suggestion{display:flex;align-items:flex-start;gap:10px;margin:14px 0;overflow-wrap:anywhere}.import-suggestion input{width:auto;flex:0 0 auto;margin-top:4px}
+.opportunity-card{border:1px solid var(--line);border-radius:14px;padding:18px;margin-top:18px;background:var(--card,#fff);overflow-wrap:anywhere}.opportunity-card.is-selected{border:2px solid #285da8}.opportunity-pay{display:grid;gap:5px;padding:12px;border-radius:9px;background:#edf2fa}.opportunity-pay span{font-size:12px}.job-more{margin-top:14px}.job-more summary{cursor:pointer;padding:10px 0}.job-more button{margin-top:8px}.comparison-tray{position:static;bottom:10px;z-index:5;box-shadow:0 5px 24px #172e4220;margin-top:18px}.comparison-tray .row{flex-wrap:wrap}.opportunity-card .actions button{min-height:44px}
+
+@media(min-height:600px){.comparison-tray.has-selection{position:sticky}}
