@@ -53,7 +53,10 @@ Matching reads saved profile evidence, experience, training and education. Curat
 
 The comparison includes a side-by-side table, requirement-level evidence reports, unresolved mandatory requirements and direct money/time trade-offs. Scores still use reviewed assessments only. Saved comparisons retain their original evidence reports; older snapshots remain readable. Document reading and profile prepopulation are unchanged.
 
-### Opening on an Android phone (v0.5.1)
-Use `work4tomorrow-mobile-v0.5.1.zip`: extract it first, then open **Work4Tomorrow.html** with Chrome. Avoid the ZIP viewer or a document preview that disables scripts. The HTML contains its styles, app code, DOCX parser and PDF parser. Document reading stays local, including when the browser gives the file an opaque origin. Some Android file providers restrict browser storage: if saving is blocked, the app reports that limitation; keep using the same browser/file location or serve the project over HTTP(S) for a stable origin.
+### Opening on an Android phone (v0.5.2)
+Use `work4tomorrow-mobile-v0.5.2.zip`: extract it first, then open **Work4Tomorrow.html** with Chrome. Avoid the ZIP viewer or a document preview that disables scripts. The HTML contains its styles, app code, DOCX parser and PDF parser. Document reading stays local, including when the browser gives the file an opaque origin. Some Android file providers restrict browser storage: if saving is blocked, the app reports that limitation; keep using the same browser/file location or serve the project over HTTP(S) for a stable origin.
 
 The packaged source ZIP also has a standalone **index.html** for direct opening. **source-index.html** is the modular development entry; serve that entry with a local HTTP server when editing source code. Run `python3 tools/package_preview.py` to regenerate the standalone downloads after edits. The builder selects source-index.html when present, so rebuilding an extracted release includes your changes.
+
+### Reviewing additional CV entries (v0.5.2)
+Combined headings such as CERTIFICATIONS & DEVELOPMENT now start a separate certification section, including pipe-separated awards. CV entries still populate empty fields. Existing fields are preserved and additional entries appear in a review checklist: select entries, choose Add selected entries to profile, then save. Repeated imports and repeated clicks avoid exact duplicate entries. Previously misplaced text is preserved for manual correction rather than silently deleted.

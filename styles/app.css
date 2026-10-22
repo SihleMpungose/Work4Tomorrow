@@ -9,3 +9,5 @@
 .comparison-overview{margin:20px 0}.comparison-scroll{overflow-x:auto;max-width:100%;margin:16px 0}.comparison-scroll table{border-collapse:collapse;min-width:560px;width:100%;text-align:left}.comparison-scroll th,.comparison-scroll td{padding:12px;border-bottom:1px solid #d9e3ef;vertical-align:top}.comparison-scroll thead{background:#edf3fc}.requirement-report{margin-top:24px}.requirement-report summary{cursor:pointer;line-height:1.6}.requirement-report details p{overflow-wrap:anywhere}
 
 [hidden]{display:none!important}
+
+.import-suggestion{display:flex;align-items:flex-start;gap:10px;margin:14px 0;overflow-wrap:anywhere}.import-suggestion input{width:auto;flex:0 0 auto;margin-top:4px}

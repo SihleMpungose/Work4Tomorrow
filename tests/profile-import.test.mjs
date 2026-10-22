@@ -1,3 +1,11 @@
 import assert from 'node:assert/strict';import {suggestProfileFields} from '../src/import/field-suggestions.js';
 const cv='Name: Thandi Dlamini\nSkills\nCustomer service\nWork Experience\nRetail assistant, 2023–2025\nHandled complaints\nCertifications\nFirst aid course\nEducation\nMatric, Demo School, 2022';
 assert.deepEqual(suggestProfileFields(cv),{name:'Thandi',evidence:'Customer service',experience:'Retail assistant, 2023–2025\nHandled complaints',certificates:'First aid course',qualifications:'Matric, Demo School, 2022'});assert.equal(suggestProfileFields('Curriculum Vitae\nSihle Mpungose\nSkills: Repairing PCs').name,'Sihle');assert.equal(suggestProfileFields('Education\nMatric').name,undefined);console.log('PASS profile name, section mapping and no-name guessing');
+const mixed='Name: Demo Person\nEDUCATION & QUALIFICATIONS\nDiploma in IT Management, Rosebank College\n2017\nCERTIFICATIONS & DEVELOPMENT\nCompTIA Security+ (2021) | CompTIA Cloud+ (2021) | Microsoft Office (2018) | ISTQB Foundation\nTECHNICAL SKILLS & COMPETENCIES\nCustomer service\nNetwork monitoring\nWORK EXPERIENCE\nSupported security monitoring';
+const mapped=suggestProfileFields(mixed);assert.equal(mapped.qualifications,'Diploma in IT Management, Rosebank College\n2017');assert.equal(mapped.certificates,'CompTIA Security+ (2021)\nCompTIA Cloud+ (2021)\nMicrosoft Office (2018)\nISTQB Foundation');assert.equal(mapped.evidence,'Customer service\nNetwork monitoring');
+assert.equal(suggestProfileFields('CERTIFICATIONS AND DEVELOPMENT\nCompTIA Security+').name,undefined);
+assert.equal(suggestProfileFields('Certifications & Professional Development: First aid').certificates,'First aid');
+const {additionalProfileEntries}=await import('../src/import/field-suggestions.js');
+assert.deepEqual(additionalProfileEntries('Customer Service.\nC++','customer service\nNetwork monitoring\nNetwork monitoring\nC#'),['Network monitoring','C#']);
+assert.deepEqual(additionalProfileEntries('CompTIA Security+ (2021)','CompTIA Security+ (2021) | CompTIA Cloud+ (2021)'),['CompTIA Cloud+ (2021)']);
+console.log('PASS combined certificate headings, section boundaries, pipe-separated awards and duplicate-free additions');
