@@ -53,15 +53,22 @@ Matching reads saved profile evidence, experience, training and education. Curat
 
 The comparison includes a side-by-side table, requirement-level evidence reports, unresolved mandatory requirements and direct money/time trade-offs. Scores still use reviewed assessments only. Saved comparisons retain their original evidence reports; older snapshots remain readable. Document reading and profile prepopulation are unchanged.
 
-### Opening on an Android phone (v0.5.3)
-Use `work4tomorrow-mobile-v0.5.3.zip`: extract it first, then open **Work4Tomorrow.html** with Chrome. Avoid the ZIP viewer or a document preview that disables scripts. The HTML contains its styles, app code, DOCX parser and PDF parser. Document reading stays local, including when the browser gives the file an opaque origin. Some Android file providers restrict browser storage: if saving is blocked, the app reports that limitation; keep using the same browser/file location or serve the project over HTTP(S) for a stable origin.
+### Opening on an Android phone (v0.6.0)
+Use `work4tomorrow-mobile-v0.6.0.zip`: extract it first, then open **Work4Tomorrow.html** with Chrome. Avoid the ZIP viewer or a document preview that disables scripts. The HTML contains its styles, app code, DOCX parser and PDF parser. Document reading stays local, including when the browser gives the file an opaque origin. Some Android file providers restrict browser storage: if saving is blocked, the app reports that limitation; keep using the same browser/file location or serve the project over HTTP(S) for a stable origin.
 
 The packaged source ZIP also has a standalone **index.html** for direct opening. **source-index.html** is the modular development entry; serve that entry with a local HTTP server when editing source code. Run `python3 tools/package_preview.py` to regenerate the standalone downloads after edits. The builder selects source-index.html when present, so rebuilding an extracted release includes your changes.
 
-### Reviewing additional CV entries (v0.5.3)
+### Reviewing additional CV entries (v0.6.0)
 Combined headings such as CERTIFICATIONS & DEVELOPMENT now start a separate certification section, including pipe-separated awards. CV entries still populate empty fields. Existing fields are preserved and additional entries appear in a review checklist: select entries, choose Add selected entries to profile, then save. Repeated imports and repeated clicks avoid exact duplicate entries. Previously misplaced text is preserved for manual correction rather than silently deleted.
 
-### Opportunity workspace and requirement priorities (v0.5.3)
+### Opportunity workspace and requirement priorities (v0.6.0)
 Job cards show salary source, remaining money, status and requirement-review needs, with search/filters and a comparison selection tray. Expanded fictional samples include duties, mandatory and preferred requirements; existing sample records are preserved (delete an older sample and load again to refresh it).
 
 Job document, pasted-text and link imports detect explicit wording and scoped headings such as Minimum requirements, Essential skills and Preferred skills. Each new requirement stores the detected priority and its explanation. Generic or contradictory wording remains unclear; optional wording overrides a mandatory section heading. Users can change the mandatory checkbox, and saved overrides survive job edits. Existing requirements retain their saved reviews. Profile import is unchanged.
+
+### Compass UI and appearance (v0.6.0)
+Copper & Ink styling uses a warm canvas, ink typography, copper actions and subdued evidence panels. New users see the app’s purpose and three-step journey above profile creation. Overview directs users to add, select or compare jobs, with evidence-review guidance. Profile sections are numbered. Comparison cards and the table are alternate views.
+
+Accessibility & appearance is available before profile creation. It includes light/dark/device themes, three text sizes, colour-vision palette choices, high contrast and reduced motion. Settings apply immediately and persist locally where storage permits. Keyboard focus, a skip link, current navigation labels, native form labels and text/symbol statuses support navigation without relying on colour. Device reduced-motion settings are respected. Tested core text-colour pairs meet 4.5:1 across light/dark palettes; this is not a complete accessibility audit or certification.
+
+`output/work4tomorrow-ui-preview.html` is a lightweight interactive UI preview for embedded viewers. It supports TXT/pasted input; PDF and DOCX are supported by the full mobile ZIP and standalone index.html. The full file remains `output/work4tomorrow-preview.html`.
