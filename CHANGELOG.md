@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.6.3 — 2026-10-25
+- Correct shared-currency salary and explicit work-experience ranges; keep diploma duration separate.
+- Extract structured skill lists and closing dates; require review for ambiguous numeric dates.
+- Offer explicit new/fill/replacement import choices, reset assessments for replaced sources, and retain normal edits.
+- Persist job identity in edit/evaluation routes with unavailable-job recovery.
+- Explain best-effort links and show paste/upload fallback after failure.
+- Support local record IDs where randomUUID is unavailable, using crypto.getRandomValues.
+
 ## 0.6.2 — 2026-10-25
 - Adopt owner-selected GPL-3.0-only, include copyright/licence notices in source and mobile packages, and provide offline licence text plus source access in the app.
 - Apply the selected Open Horizon symbol to desktop/mobile headers, favicon and embedded touch icon.

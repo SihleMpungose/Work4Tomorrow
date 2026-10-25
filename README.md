@@ -1,6 +1,6 @@
 # Work4Tomorrow
 
-**v0.6.2 · Open Horizon** — browser-only competition proof of concept.
+**v0.6.3 · Import Review · Open Horizon** — browser-only competition proof of concept.
 
 **Live app:** [Open Work4Tomorrow](https://sihlempungose.github.io/Work4Tomorrow/) · Free GitHub Pages hosting, HTTPS enforced.
 
@@ -60,7 +60,7 @@ Matching reads saved profile evidence, experience, training and education. Curat
 The comparison includes a side-by-side table, requirement-level evidence reports, unresolved mandatory requirements and direct money/time trade-offs. Scores still use reviewed assessments only. Saved comparisons retain their original evidence reports; older snapshots remain readable. Document reading and profile prepopulation are unchanged.
 
 ### Opening on an Android phone (v0.6.0)
-Use `work4tomorrow-mobile-v0.6.2.zip`: extract it first, then open **Work4Tomorrow.html** with Chrome. Avoid the ZIP viewer or a document preview that disables scripts. The HTML contains its styles, app code, DOCX parser and PDF parser. Document reading stays local, including when the browser gives the file an opaque origin. Some Android file providers restrict browser storage: if saving is blocked, the app reports that limitation; keep using the same browser/file location or serve the project over HTTP(S) for a stable origin.
+Use `work4tomorrow-mobile-v0.6.3-GPLv3.zip`: extract it first, then open **Work4Tomorrow.html** with Chrome. Avoid the ZIP viewer or a document preview that disables scripts. The HTML contains its styles, app code, DOCX parser and PDF parser. Document reading stays local, including when the browser gives the file an opaque origin. Some Android file providers restrict browser storage: if saving is blocked, the app reports that limitation; keep using the same browser/file location or serve the project over HTTP(S) for a stable origin.
 
 The packaged source ZIP has a standalone **index.html** for direct opening. In this repository, **index.html** and **source-index.html** are modular entries; serve them with a local HTTP server when editing source code. Run `python3 tools/package_preview.py` to regenerate the standalone downloads after edits. The builder selects source-index.html when present, so rebuilding an extracted release includes your changes.
 
@@ -94,9 +94,12 @@ The public repository retains the Skill Pack planning documents in `devpost/scop
 The project was developed with AI coding assistance. The Open Horizon logo direction was explored with AI-generated concepts, selected by the owner and refined into editable SVG geometry. Generated concepts are not a trademark-clearance claim. The app itself uses local, inspectable matching rules and does not call an AI service. Bundled Mammoth and PDF.js parsers are pre-existing third-party libraries; their versions, licences and source links are recorded in `THIRD_PARTY_NOTICES.md` and `vendor/`. Synthetic sample jobs and document fixtures are for demonstration; they are not live vacancies or market salary data.
 
 ## Rebuild and verify
-Run `python3 tools/package_preview.py` to generate standalone HTML, mobile ZIP and source ZIP in ignored `output/`. The builder preserves the modular repository entry. Run all seven unit suites with `for f in tests/*.test.mjs; do node "$f" || exit 1; done`, then `python3 tools/check_costs.py`. Browser scripts require a running local HTTP server plus Playwright/Chromium as developer tools.
+Run `python3 tools/package_preview.py` to generate standalone HTML, mobile ZIP and source ZIP in ignored `output/`. The builder preserves the modular repository entry. Run all eight unit suites with `for f in tests/*.test.mjs; do node "$f" || exit 1; done`, then `python3 tools/check_costs.py`. Browser scripts require a running local HTTP server plus Playwright/Chromium as developer tools.
 
 ## Licence
 Copyright (C) 2026 Sihle Mpungose. Project-authored code, documentation and assets are licensed under **GNU GPL version 3 only** (`GPL-3.0-only`), unless otherwise stated. See [LICENSE](LICENSE) for the unmodified full licence and [COPYRIGHT](COPYRIGHT) for the project notice. Commercial redistribution is allowed subject to GPLv3, including corresponding-source obligations. This licence does not prohibit resale. The app exposes Licence & source in its footer, including the full GPL text offline.
 
 Third-party components retain their original licences and notices. The source package includes the editable project, scripts and bundled components; the mobile ZIP includes GPL and third-party notices and points to the matching source ZIP and public repository. Keep the corresponding source available alongside distributed builds. No hosting or submission-ready status is implied by licensing.
+
+### Advert import fixes (v0.6.3)
+Shared-currency monthly ranges, explicit experience ranges, structured skill lists and validated closing dates are suggested conservatively. Qualification duration is separate from work experience; ambiguous numeric dates require confirmation. Existing job forms offer Start a new job, Fill empty fields or Review replacements. Replacing advert identity/source resets requirement assessments; ordinary cost edits retain them. Job edit/evaluation URLs contain the saved job ID and recover safely if unavailable. External website access remains best effort, with paste/upload alternatives. See `devpost/import-fixes-qa-2026-10-25.md` for checked cases and limits.

@@ -1,0 +1,14 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Structured advert regression checks</title><h1>Structured advert regression checks</h1><pre id="results">Running…</pre><script type="module">
+import {jobTextFromHTML} from '../src/import/link-reader.js';
+import {suggestJobImport} from '../src/import/field-suggestions.js';
+import {extractRequirements} from '../src/import/requirements.js';
+const results=[];
+for(const skills of [['SQL','SQL',{name:'Customer support'}],'SQL',{name:'SQL'}]){
+ const job={'@type':'JobPosting',title:'Synthetic tester',skills,validThrough:'2026-11-05T23:59:00+02:00',qualifications:['Minimum 3 years diploma'],description:'<p>2–3 years relevant experience</p>',baseSalary:{currency:'zar',value:{minValue:8000,maxValue:12000,unitText:'month'}}};
+ const text=jobTextFromHTML('<script type="application/ld+json">'+JSON.stringify(job)+'<\/script>');
+ const f=suggestJobImport(text).fields,r=extractRequirements(text);
+ if(f.salary!==8000||f.salaryMax!==12000||f.requiredMonths!==24||f.closingDate!=='2026-11-05'||r.filter(x=>x.text==='SQL').length!==1||r.find(x=>x.text==='SQL').priority!=='unclear')throw Error(JSON.stringify({f,r}));
+ results.push('PASS '+JSON.stringify(skills)+' → salary range, experience minimum, closing date, unique skills and unclear priority');
+}
+document.querySelector('#results').textContent=results.join('\n');
+</script></html>

@@ -22,6 +22,7 @@ export function extractRequirements(text){
   if(inline){context=inline[1];collecting=true;for(const value of inline[2].split(/\s*;\s*/))rows.push({text:value,...requirementPriority(value,context),priorityOrigin:'advert'});continue;}
   if(/^(?:salary|pay|remuneration|location|job title|employer|closing date|working hours)\s*:/i.test(line)){context='';collecting=false;continue;}
   if(/^(?:responsibilities|duties|benefits|how to apply|application(?: process)?|job description|about(?: us| the role)?|salary|remuneration|location|working hours)\s*:?$/i.test(line)){context='';collecting=false;continue;}
+  if(/^(?:(?:minimum|at least|required)\s+)?\d+(?:\.\d+)?(?:\s*[-–—]\s*\d+(?:\.\d+)?)?\s*(?:hours?|hrs?)\s*(?:per\s*week|weekly|\/week)/i.test(line))continue;
   if(collecting||(/\b(?:must have|must possess|is required|are required|essential|mandatory|preferred|desirable|advantageous|nice[- ]to[- ]have)\b/i.test(line)&&! /^(?:salary|pay|location|job title|employer)\s*:/i.test(line)))for(const value of line.split(/\s*;\s*/))if(value)rows.push({text:value,...requirementPriority(value,context),priorityOrigin:'advert'});
  }
  return rows.slice(0,50);
