@@ -1,7 +1,11 @@
 # Work4Tomorrow
+
+**v0.6.2 · Open Horizon** — browser-only competition proof of concept.
+
+![Work4Tomorrow Open Horizon logo](assets/logo.svg)
 Compare opportunities. Plan your next move.
 
-A new competition project for early-career job seekers across South Africa. Currently implements **slices 1–4 for review**: a reusable local profile, manually entered jobs, reviewed skills evidence, and a single-job cost evaluation. Local TXT/DOCX/text-PDF import now includes a review-and-apply step. Multi-job priorities, current-job context and salary guidance are available. Saved snapshots, source-change flags, independent statuses and History are available. Final hands-on review remains pending.
+A new competition project for early-career job seekers across South Africa. Implements **slices 1–4 for review**: a reusable local profile, job collection, reviewed skills evidence, single-job cost evaluation and comparisons of one to three opportunities. Local TXT/DOCX/text-PDF import now includes a review-and-apply step. Multi-job priorities, current-job context and salary guidance are available. Saved snapshots, source-change flags, independent statuses and History are available. Final hands-on review remains pending.
 
 ## Run
 Requires Python 3 for local serving only; modern browser with IndexedDB. No paid services or API keys.
@@ -9,7 +13,7 @@ Requires Python 3 for local serving only; modern browser with IndexedDB. No paid
 ```sh
 python3 -m http.server 8000 --bind 127.0.0.1
 ```
-Windows: `py -m http.server 8000 --bind 127.0.0.1`. Open http://localhost:8000/ . Keep the same browser/site address and port to access saved records. Do not open the HTML as a file. A phone will use the eventual HTTPS hosted page without installing Python; hosting is not configured yet.
+Windows: `py -m http.server 8000 --bind 127.0.0.1`. Open http://localhost:8000/ . Keep the same browser/site address and port to access saved records. Use the HTTP address for the modular repository entry; standalone downloads can be opened directly. A phone will use the eventual HTTPS hosted page without installing Python; hosting is not configured yet.
 
 ## Check
 ```sh
@@ -28,7 +32,7 @@ Data stays in IndexedDB on the same device/browser; no server receives it. Clear
 `devpost/scope.md`, `prd.md`, `spec.md` are approved; `checklist.md` records implementation and learner review progress. Public repository is intended for SihleMpungose, not AfrikaBrothers.
 
 ## Document import
-Choose a local TXT, DOCX or text-based PDF (5 MiB, 50 PDF pages, 100,000 characters; 15-second cancelable worker). Review extracted text, highlight genuine skill/task text or job requirements, then apply to the form. Clearly labelled job title/company/location can be proposed; salary is never invented. Apply does not save. Original files are not stored; structured details and explicitly selected excerpts are saved only with Save. Source links are optional references and are not fetched. Scans/images, encrypted files and malformed archives offer paste/manual fallback.
+Choose a local TXT, DOCX or text-based PDF (5 MiB, 50 PDF pages, 100,000 characters; 15-second cancelable worker). Review extracted text, highlight genuine skill/task text or job requirements, then apply to the form. Clearly labelled job title/company/location can be proposed; salary is never invented. Apply does not save. Original files are not stored; structured details and explicitly selected excerpts are saved only with Save. Source links are optional references. Direct link import fetches only after an explicit user action and may be blocked by browser CORS restrictions. Scans/images, encrypted files and malformed archives offer paste/manual fallback.
 
 Parser versions and licences are in THIRD_PARTY_NOTICES.md. Browser import/regression scripts use Playwright as a developer-only tool. With a local server running and Playwright available, run `node tests/browser-first-slice.cjs` and `node tests/browser-imports.cjs`. Set CHROMIUM_PATH if using a separate Chromium binary. No browser testing dependency is needed to run the app.
 
@@ -54,9 +58,9 @@ Matching reads saved profile evidence, experience, training and education. Curat
 The comparison includes a side-by-side table, requirement-level evidence reports, unresolved mandatory requirements and direct money/time trade-offs. Scores still use reviewed assessments only. Saved comparisons retain their original evidence reports; older snapshots remain readable. Document reading and profile prepopulation are unchanged.
 
 ### Opening on an Android phone (v0.6.0)
-Use `work4tomorrow-mobile-v0.6.0.zip`: extract it first, then open **Work4Tomorrow.html** with Chrome. Avoid the ZIP viewer or a document preview that disables scripts. The HTML contains its styles, app code, DOCX parser and PDF parser. Document reading stays local, including when the browser gives the file an opaque origin. Some Android file providers restrict browser storage: if saving is blocked, the app reports that limitation; keep using the same browser/file location or serve the project over HTTP(S) for a stable origin.
+Use `work4tomorrow-mobile-v0.6.2.zip`: extract it first, then open **Work4Tomorrow.html** with Chrome. Avoid the ZIP viewer or a document preview that disables scripts. The HTML contains its styles, app code, DOCX parser and PDF parser. Document reading stays local, including when the browser gives the file an opaque origin. Some Android file providers restrict browser storage: if saving is blocked, the app reports that limitation; keep using the same browser/file location or serve the project over HTTP(S) for a stable origin.
 
-The packaged source ZIP also has a standalone **index.html** for direct opening. **source-index.html** is the modular development entry; serve that entry with a local HTTP server when editing source code. Run `python3 tools/package_preview.py` to regenerate the standalone downloads after edits. The builder selects source-index.html when present, so rebuilding an extracted release includes your changes.
+The packaged source ZIP has a standalone **index.html** for direct opening. In this repository, **index.html** and **source-index.html** are modular entries; serve them with a local HTTP server when editing source code. Run `python3 tools/package_preview.py` to regenerate the standalone downloads after edits. The builder selects source-index.html when present, so rebuilding an extracted release includes your changes.
 
 ### Reviewing additional CV entries (v0.6.0)
 Combined headings such as CERTIFICATIONS & DEVELOPMENT now start a separate certification section, including pipe-separated awards. CV entries still populate empty fields. Existing fields are preserved and additional entries appear in a review checklist: select entries, choose Add selected entries to profile, then save. Repeated imports and repeated clicks avoid exact duplicate entries. Previously misplaced text is preserved for manual correction rather than silently deleted.
@@ -72,3 +76,20 @@ Copper & Ink styling uses a warm canvas, ink typography, copper actions and subd
 Accessibility & appearance is available before profile creation. It includes light/dark/device themes, three text sizes, colour-vision palette choices, high contrast and reduced motion. Settings apply immediately and persist locally where storage permits. Keyboard focus, a skip link, current navigation labels, native form labels and text/symbol statuses support navigation without relying on colour. Device reduced-motion settings are respected. Tested core text-colour pairs meet 4.5:1 across light/dark palettes; this is not a complete accessibility audit or certification.
 
 `output/work4tomorrow-ui-preview.html` is a lightweight interactive UI preview for embedded viewers. It supports TXT/pasted input; PDF and DOCX are supported by the full mobile ZIP and standalone index.html. The full file remains `output/work4tomorrow-preview.html`.
+
+### Brand and typography (v0.6.1)
+Shared original W/forward-path vector mark in the desktop/mobile shell and browser icon. Exported SVG wordmark and 32/180/192/512px PNG icons are in assets. Shared text scale: body/controls 16px, supporting text 14px, section headings 22px at the default setting. Larger text settings scale these values. Copper & Ink, dark mode and accessibility palettes remain available.
+
+Hosting preparation: see devpost/hosting.md. No deployment or public URL is claimed by this package.
+
+### Open Horizon identity (v0.6.2)
+Option 1 selected by the owner. Refined as editable SVG geometry: unequal doorway pillars, copper horizon and curved path. The same symbol is embedded in the mobile and desktop navigation, standalone previews and favicon. Symbol colours follow all appearance settings, including high contrast. Light, dark and monochrome symbols/wordmarks plus raster app icons are in assets. The logo wordmark uses system fonts; app wordmarks remain real accessible text. Icons are embedded into standalone downloads. `assets/brand-preview.html` shows all variants. No external fonts or image services are needed. Existing IndexedDB databases, appearance keys and saved comparisons are unchanged. This source update does not deploy a hosted site. See `devpost/repository-update-2026-10-25.md` for validation and submission status.
+
+## Competition review status
+The public repository retains the Skill Pack planning documents in `devpost/scope.md`, `devpost/prd.md` and `devpost/spec.md`, plus the build checklist. The update preserves their history and does not mark pending learner review as completed. An open-source licence has not yet been selected; the final submission description and public YouTube/Vimeo video under three minutes still require confirmation. Official rules: https://learn-ai-basics.devpost.com/rules . Deadline: 26 October 2026 at 23:00 South Africa time.
+
+## AI assistance and included work
+The project was developed with AI coding assistance. The Open Horizon logo direction was explored with AI-generated concepts, selected by the owner and refined into editable SVG geometry. Generated concepts are not a trademark-clearance claim. The app itself uses local, inspectable matching rules and does not call an AI service. Bundled Mammoth and PDF.js parsers are pre-existing third-party libraries; their versions, licences and source links are recorded in `THIRD_PARTY_NOTICES.md` and `vendor/`. Synthetic sample jobs and document fixtures are for demonstration; they are not live vacancies or market salary data.
+
+## Rebuild and verify
+Run `python3 tools/package_preview.py` to generate standalone HTML, mobile ZIP and source ZIP in ignored `output/`. The builder preserves the modular repository entry. Run all seven unit suites with `for f in tests/*.test.mjs; do node "$f" || exit 1; done`, then `python3 tools/check_costs.py`. Browser scripts require a running local HTTP server plus Playwright/Chromium as developer tools.
