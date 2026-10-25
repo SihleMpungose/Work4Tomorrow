@@ -2,6 +2,8 @@
 
 **v0.6.2 · Open Horizon** — browser-only competition proof of concept.
 
+**Live app:** [Open Work4Tomorrow](https://sihlempungose.github.io/Work4Tomorrow/) · Free GitHub Pages hosting, HTTPS enforced.
+
 ![Work4Tomorrow Open Horizon logo](assets/logo.svg)
 Compare opportunities. Plan your next move.
 
@@ -13,7 +15,7 @@ Requires Python 3 for local serving only; modern browser with IndexedDB. No paid
 ```sh
 python3 -m http.server 8000 --bind 127.0.0.1
 ```
-Windows: `py -m http.server 8000 --bind 127.0.0.1`. Open http://localhost:8000/ . Keep the same browser/site address and port to access saved records. Use the HTTP address for the modular repository entry; standalone downloads can be opened directly. A phone will use the eventual HTTPS hosted page without installing Python; hosting is not configured yet.
+Windows: `py -m http.server 8000 --bind 127.0.0.1`. Open http://localhost:8000/ . Keep the same browser/site address and port to access saved records. Use the HTTP address for the modular repository entry; standalone downloads can be opened directly. On phones and computers, open the live HTTPS app above; no Python installation is needed for the hosted app.
 
 ## Check
 ```sh
@@ -80,10 +82,10 @@ Accessibility & appearance is available before profile creation. It includes lig
 ### Brand and typography (v0.6.1)
 Shared original W/forward-path vector mark in the desktop/mobile shell and browser icon. Exported SVG wordmark and 32/180/192/512px PNG icons are in assets. Shared text scale: body/controls 16px, supporting text 14px, section headings 22px at the default setting. Larger text settings scale these values. Copper & Ink, dark mode and accessibility palettes remain available.
 
-Hosting preparation: see devpost/hosting.md. No deployment or public URL is claimed by this package.
+Hosting: GitHub Pages enabled on 25 October 2026. See `devpost/hosting.md` and `devpost/deployment-2026-10-25.md` for the live address and verification.
 
 ### Open Horizon identity (v0.6.2)
-Option 1 selected by the owner. Refined as editable SVG geometry: unequal doorway pillars, copper horizon and curved path. The same symbol is embedded in the mobile and desktop navigation, standalone previews and favicon. Symbol colours follow all appearance settings, including high contrast. Light, dark and monochrome symbols/wordmarks plus raster app icons are in assets. The logo wordmark uses system fonts; app wordmarks remain real accessible text. Icons are embedded into standalone downloads. `assets/brand-preview.html` shows all variants. No external fonts or image services are needed. Existing IndexedDB databases, appearance keys and saved comparisons are unchanged. This source update does not deploy a hosted site. See `devpost/repository-update-2026-10-25.md` for validation and submission status.
+Option 1 selected by the owner. Refined as editable SVG geometry: unequal doorway pillars, copper horizon and curved path. The same symbol is embedded in the mobile and desktop navigation, standalone previews and favicon. Symbol colours follow all appearance settings, including high contrast. Light, dark and monochrome symbols/wordmarks plus raster app icons are in assets. The logo wordmark uses system fonts; app wordmarks remain real accessible text. Icons are embedded into standalone downloads. `assets/brand-preview.html` shows all variants. No external fonts or image services are needed. Existing IndexedDB databases, appearance keys and saved comparisons are unchanged. The app is now hosted on GitHub Pages; see `devpost/deployment-2026-10-25.md`. The earlier source-sync record remains in `devpost/repository-update-2026-10-25.md`.
 
 ## Competition review status
 The public repository retains the Skill Pack planning documents in `devpost/scope.md`, `devpost/prd.md` and `devpost/spec.md`, plus the build checklist. The update preserves their history and does not mark pending learner review as completed. GPLv3 was selected by the owner on 25 October 2026; the final submission description and public YouTube/Vimeo video under three minutes still require confirmation. Official rules: https://learn-ai-basics.devpost.com/rules . Deadline: 26 October 2026 at 23:00 South Africa time.
