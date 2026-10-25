@@ -1,3 +1,5 @@
+/* SPDX-License-Identifier: GPL-3.0-only
+ * Copyright (C) 2026 Sihle Mpungose */
 /* Compass: Copper & Ink. All text/control colours come from these tokens. */
 :root{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-synthesis:none;font-size:100%;color-scheme:light;--bg:#f7f3ec;--surface:#fffcf7;--ink:#202a33;--muted:#56616a;--line:#8b8277;--action:#93401e;--on-action:#fffaf4;--soft:#f1e3d5;--soft-ink:#62351f;--evidence:#efe6df;--evidence-ink:#493c36;--review:#f7e9c8;--review-ink:#62460c;--focus:#154c77;--navy:var(--ink);--blue:var(--action);--card:var(--surface);background:var(--bg);color:var(--ink)}
 :root[data-theme=dark]{color-scheme:dark;--bg:#171c22;--surface:#222a32;--ink:#f6eee4;--muted:#bdc6cd;--line:#7b838a;--action:#f0ae82;--on-action:#261a12;--soft:#3d3028;--soft-ink:#f5c5a3;--evidence:#34303b;--evidence-ink:#e4daed;--review:#40381f;--review-ink:#f7dfa5;--focus:#98d6ff}
@@ -36,3 +38,5 @@ body{font-size:var(--text-body);line-height:1.6}h1,h2,h3{letter-spacing:-.025em}
 /* Open Horizon: shared semantic colours keep every appearance palette legible. */
 .brandmark{width:2.7rem;height:3.2rem;flex:0 0 2.7rem}.brandmark .horizon-symbol{width:100%;height:100%}.top-brand .horizon-symbol{width:1.8rem;height:2.1rem}.brand{gap:.65rem}.top-brand{gap:.55rem}.brand small{font-size:.875rem}.brand>span:last-child{overflow-wrap:anywhere}
 @media(forced-colors:active){.horizon-pillars,.horizon-sun{fill:CanvasText}}
+
+.legal-notice{margin-top:1rem;text-align:left;max-width:100%;overflow-wrap:anywhere}.legal-notice summary{font-weight:650}.legal-notice pre{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;line-height:1.6;max-height:24rem;overflow-y:auto;padding:1rem;border:1px solid var(--line);border-radius:.65rem;background:var(--surface);color:var(--ink)}

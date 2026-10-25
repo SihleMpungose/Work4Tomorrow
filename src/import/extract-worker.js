@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Sihle Mpungose
 const MAX_TEXT=100000;
 function checkLength(text){if(text.length>MAX_TEXT)throw Error('Extracted text exceeds 100,000 characters. Use a smaller document or paste a relevant section.');return text;}
 function verifyDocx(buffer){

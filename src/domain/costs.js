@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Sihle Mpungose
 // null means unknown. Zero is a real input, never a substitute for missing data.
 export function numberOrNull(value) { return value === '' || value == null ? null : Number(value); }
 export function petrolCost(returnKm, litresPer100Km, pricePerLitre) {

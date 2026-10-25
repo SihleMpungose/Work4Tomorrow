@@ -1,6 +1,7 @@
 # Changelog
 
 ## 0.6.2 — 2026-10-25
+- Adopt owner-selected GPL-3.0-only, include copyright/licence notices in source and mobile packages, and provide offline licence text plus source access in the app.
 - Apply the selected Open Horizon symbol to desktop/mobile headers, favicon and embedded touch icon.
 - Include editable light/dark/monochrome wordmarks and symbols, raster icons and a brand preview.
 - Retain the v0.6.1 shared type scale, appearance settings and local saved-data behaviour.

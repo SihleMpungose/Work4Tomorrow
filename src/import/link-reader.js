@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Sihle Mpungose
 // Direct browser requests only: no proxy, login cookies or local CV data sent.
 export function jobLinkURL(value){
  let url;try{url=new URL(value);}catch{throw Error('Enter a complete http or https job link.');}

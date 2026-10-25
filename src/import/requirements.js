@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Sihle Mpungose
 const requirementKey=value=>String(value||'').toLowerCase().replace(/^[•*–-]\s*/,'').replace(/\s+/g,' ').trim();
 export function requirementPriority(text,context=''){
  const value=String(text||'');

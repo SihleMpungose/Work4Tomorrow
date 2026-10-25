@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Sihle Mpungose
 const appearanceDefaults={theme:'system',textSize:'standard',palette:'standard',highContrast:false,reducedMotion:false};
 const appearanceKey='work4tomorrow.appearance.v1';
 let appearanceSettings={...appearanceDefaults};

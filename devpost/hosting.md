@@ -2,7 +2,7 @@
 Recommendation: GitHub Pages for the competition proof of concept, using the existing SihleMpungose/Work4Tomorrow public repository. No custom domain, server, database, subscriptions or API keys are needed. Static client code and bundled parsers fit this route. For later commercial SaaS use, reassess hosting: GitHub Pages restricts primarily commercial SaaS/transaction sites. Cloudflare Pages Free is an alternative (500 builds/month, 25 MiB/asset).
 
 Official rules checked: https://learn-ai-basics.devpost.com/rules
-They do not prescribe a hosting vendor. They require a working end-to-end proof of concept; public GitHub/GitLab/Bitbucket repository with source/assets/run instructions; scope.md, prd.md and spec.md generated using the Skill Pack; text description; public YouTube/Vimeo demo under three minutes. The repository should include a detectable open-source licence. Do not claim final compliance: licence and learning/submission checks remain outstanding.
+They do not prescribe a hosting vendor. They require a working end-to-end proof of concept; public GitHub/GitLab/Bitbucket repository with source/assets/run instructions; scope.md, prd.md and spec.md generated using the Skill Pack; text description; public YouTube/Vimeo demo under three minutes. The repository should include a detectable open-source licence. Do not claim final compliance: GPLv3 has been selected; learning/submission checks remain outstanding.
 Deadline: 26 October 2026 at 17:00 EDT = 23:00 South Africa time.
 
 ## Deployment steps

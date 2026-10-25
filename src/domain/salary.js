@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Sihle Mpungose
 export function salaryGuide(job,profile={}){
  const low=job.salary,high=job.salaryMax;
  if(low==null){const targets=[profile.gross,profile.takeHome!=null&&job.deductions!=null?profile.takeHome+job.deductions:null].filter(v=>v!=null);return {kind:'Personal target',target:targets.length?Math.max(...targets):null,reason:'Based only on your income goals and any entered constant deductions, not market pay.'};}

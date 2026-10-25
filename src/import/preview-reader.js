@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Sihle Mpungose
 // Lightweight UI preview adapter. Full downloads use reader.js with DOCX/PDF parsers.
 export const MAX_BYTES=5*1024*1024;
 export function extractDocument(file,{onProgress=()=>{}}={}){

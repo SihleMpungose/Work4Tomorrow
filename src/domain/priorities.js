@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Sihle Mpungose
 import {requirementReport} from './skills.js';
 import {evaluateCosts} from './costs.js';
 export const factors=['skills','money','commute','hours'];

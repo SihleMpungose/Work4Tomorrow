@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Sihle Mpungose
 import {getAppearance,updateAppearance,resetAppearance,setupAppearance} from './appearance.js';
 import {classifyRequirements} from './import/requirements.js';
 import {sampleJobs} from './data/sample-jobs.js';

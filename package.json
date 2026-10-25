@@ -5,5 +5,6 @@
   "type": "module",
   "scripts": {
     "test": "node tests/domain.test.mjs"
-  }
+  },
+  "license": "GPL-3.0-only"
 }

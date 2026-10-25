@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Sihle Mpungose
 import {extractRequirements} from './requirements.js';
 // Conservative field suggestions. Unknown salary units and applicant experience stay unknown.
 export function importNumber(value){

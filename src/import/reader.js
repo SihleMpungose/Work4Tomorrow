@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Sihle Mpungose
 export const MAX_BYTES=5*1024*1024;
 export function extractDocument(file,{onProgress=()=>{}}={}) {
  let worker,timer,rejectPending,done=false;

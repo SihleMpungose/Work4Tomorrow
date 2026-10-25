@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Sihle Mpungose
 export const statuses = ['Needs clarification','Supported','Partially supported','Not demonstrated','Confirmed unmet'];
 // Interpret saved evidence only. Document extraction and profile fields are untouched.
 const normalise = value => String(value || '').normalize('NFKC').toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9]+/g,' ').trim().replace(/\s+/g,' ');

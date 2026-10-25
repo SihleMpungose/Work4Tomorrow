@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Sihle Mpungose
 import {salaryGuide} from './salary.js';
 export const FORMULA_VERSION='w4t-2-evidence';
 export function createSnapshot(jobs,profile,mode,values,weights,result){return {id:crypto.randomUUID(),createdAt:new Date().toISOString(),historical:false,deletedIds:[],payload:structuredClone({formulaVersion:FORMULA_VERSION,jobs,profile,mode,values,weights,result,salaryGuides:Object.fromEntries(jobs.map(job=>[job.id,salaryGuide(job,profile)]))})};}

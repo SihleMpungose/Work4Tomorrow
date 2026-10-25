@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Sihle Mpungose
 import {classifyRequirements} from '../import/requirements.js';
 // Fictional examples only. Figures are scenarios, not estimates of market pay.
 export function sampleJobs(){

@@ -6,3 +6,5 @@ All application document processing runs locally. No parser code is fetched at r
 - PDF.js / pdfjs-dist **5.6.205**, Apache-2.0, browser module and worker from the runtime npm distribution. Source/documentation: https://mozilla.github.io/pdf.js/ . Licence: `vendor/pdfjs/LICENSE`.
 
 Versions are pinned by checked-in files. No claim of a complete security audit. Original document bytes are not retained by this app after extraction. Sample fixtures are generated synthetic documents.
+
+The project's GPL-3.0-only selection does not replace the licences of these third-party components. Copies of their licence texts are retained in vendor/ and included in mobile packages. Upstream source/documentation links are listed above. Bundled dependency notice audit remains pending as stated above.
